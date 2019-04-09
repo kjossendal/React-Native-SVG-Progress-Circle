@@ -42,7 +42,7 @@ class CircularProgressBar extends React.Component {
         const dashArray = radius * Math.PI * 2;
         // Scale 100% coverage overlay with the actual percent
         const dashOffset = dashArray - dashArray * this.props.percentage / 100;
-  
+        // Alert.alert(dashOffset.toString())
         return (
             <Svg
                 width={this.props.sqSize}
@@ -55,6 +55,32 @@ class CircularProgressBar extends React.Component {
                     cy={this.props.sqSize / 2}
                     r={radius}
                     strokeWidth={`${this.props.strokeWidth}px`} />
+            {/* Right side circle */}
+                <Circle
+                    fill='none'
+                    stroke='green'
+                    cx={this.props.sqSize / 2}
+                    cy={this.props.sqSize / 2}
+                    r={radius}
+                    strokeWidth={`${this.props.strokeWidth}px`}
+                    transform={`rotate(-90 ${this.props.sqSize / 2} ${this.props.sqSize / 2})`}
+                    style={{
+                        strokeDasharray: dashArray,
+                        strokeDashoffset: 350.0
+                    }} />
+            {/* Left side circle */}
+                <Circle
+                    fill='none'
+                    stroke='purple'
+                    cx={this.props.sqSize / 2}
+                    cy={this.props.sqSize / 2}
+                    r={radius}
+                    strokeWidth={`${this.props.strokeWidth}px`}
+                    transform={`rotate(-90 ${this.props.sqSize / 2} ${this.props.sqSize / 2})`}
+                    style={{
+                        strokeDasharray: dashArray,
+                        strokeDashoffset: -350.0
+                    }} />
                 <Circle
                     fill='none'
                     stroke='red'
