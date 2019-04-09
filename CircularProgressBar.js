@@ -49,7 +49,6 @@ class CircularProgressBar extends React.Component {
                 height={this.props.sqSize}
                 viewBox={viewBox}>
                 <Circle
-                    style={styles.circleBackground}
                     fill='none'
                     stroke='#ddd'
                     cx={this.props.sqSize / 2}
@@ -57,7 +56,6 @@ class CircularProgressBar extends React.Component {
                     r={radius}
                     strokeWidth={`${this.props.strokeWidth}px`} />
                 <Circle
-                    style={styles.circleProgress}
                     fill='none'
                     stroke='red'
                     strokeLinecap='round'

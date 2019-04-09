@@ -29,6 +29,7 @@ export default class App extends Component<Props> {
                     onValueChange={this.handleChangeEvent}
                     minimumTrackTintColor="grey"
                     maximumTrackTintColor="red"
+                    thumbTintColor="red"
                 />
         </View>
         );
